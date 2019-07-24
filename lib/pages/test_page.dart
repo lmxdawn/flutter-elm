@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_elm/utils/dio_util.dart';
+import 'package:dio/dio.dart';
 
 class SecondPage extends StatelessWidget {
 
@@ -8,6 +10,9 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _getHttp().then((data) {
+    print('Http response: $data');
+  });
     return Scaffold(
       backgroundColor: Colors.pinkAccent,
       appBar: AppBar(
@@ -30,4 +35,13 @@ class SecondPage extends StatelessWidget {
       ),
     );
   }
+
+  _getHttp() async {
+    
+    var dio = DioUtil.http();
+    Response response = await dio.get("/activity_link.json");
+    // print(response.data);
+    
+  }
+
 }

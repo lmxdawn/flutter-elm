@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_elm/pages/test_page.dart';
+import 'package:flutter_elm/utils/custom_route_util.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,8 +55,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     height: 800,
-                    child: ListTile(
-                      title: Text("嘿嘿"),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(CustomRouteUtil.slide(SecondPage(title: "哈哈哈哈哈哈",), milliseconds: 300));
+                      },
+                      child: ListTile(
+                        title: Text("嘿嘿"),
+                      ),
                     ),
                   )
                 ],
@@ -84,7 +91,7 @@ class _HomePageState extends State<HomePage> {
     double alpha = offset / APPBAR_SCROLL_OFFSET;
     if (alpha < 0) {
       alpha = 0;
-    } else if(alpha > 1) {
+    } else if (alpha > 1) {
       alpha = 1;
     }
     setState(() {

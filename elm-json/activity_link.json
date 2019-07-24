@@ -1,36 +1,16 @@
-{
-    "bottom": [
-        {
-            "bigImghash": "eeedf43e7e53f6e1346c3fda0609f1d3png",
-            "content": "搭配齐全吃得好",
-            "imghash": "dd416ff085900d62b8d60fa7e9c6b65dpng",
-            "info": "立即抢购 >",
-            "title": "品质套餐",
-            "url": "/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0"
-        },
-        {
-            "content": "品质升级，消费亲民",
-            "imghash": "d4c53f833224e5274dcaa3a39a6dde77png",
-            "info": "立即抢购 >",
-            "title": "品质联盟",
-            "url": "https://tb.ele.me/wow/zele/act/pzlm?wh_biz=tm"
-        }
-    ],
-    "top": [
-        {
-            "bigImghash": "eeedf43e7e53f6e1346c3fda0609f1d3png",
-            "content": "搭配齐全吃得好",
-            "imghash": "dd416ff085900d62b8d60fa7e9c6b65dpng",
-            "info": "立即抢购 >",
-            "title": "品质套餐",
-            "url": "/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0"
-        },
-        {
-            "content": "品质升级，消费亲民",
-            "imghash": "d4c53f833224e5274dcaa3a39a6dde77png",
-            "info": "立即抢购 >",
-            "title": "品质联盟",
-            "url": "https://tb.ele.me/wow/zele/act/pzlm?wh_biz=tm"
-        }
-    ]
-}
+[
+    {
+        "content": "搭配齐全吃得好",
+        "imghash": "df43e7e53f6e1346c3fda0609f1d3png.png",
+        "info": "立即抢购 >",
+        "title": "品质套餐",
+        "url": "/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0"
+    },
+    {
+        "content": "品质升级，消费亲民",
+        "imghash": "53f833224e5274dcaa3a39a6dde77png.png",
+        "info": "立即抢购 >",
+        "title": "品质联盟",
+        "url": "https://tb.ele.me/wow/zele/act/pzlm?wh_biz=tm"
+    }
+]

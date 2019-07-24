@@ -1,4 +1,4 @@
-# flutter_app1
+# flutter_elm
 
 A new Flutter project.
 

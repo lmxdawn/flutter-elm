@@ -1,24 +1,13 @@
 [{
-	"banner_type": 1,
 	"id": 20304114,
-	"image_hash": "faafd34c9e8201dafd0c25002a93aa38jpeg",
-	"is_ad_flag_visible": 0,
-	"rank_id": "5994fcf7f4aa4ea7b6669f659f0c022d",
+	"image_hash": "fd34c9e8201dafd0c25002a93aa38jpeg.jpeg",
 	"url": "eleme://web?navColor=&target_name=&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fh5%2Fportal-3-years%2Fwww%2Findex.html%3Fentrance%3Delmezhongtong%26activity_ids%3D%255B10652514%255D&title=&navType=0&animation_type=1"
 }, {
-	"banner_type": 1,
 	"id": 20304330,
-	"image_hash": "58250b0383eaa31ef59484df1ab7250ejpeg",
-	"is_ad_flag_visible": 0,
-	"rank_id": "5994fcf7f4aa4ea7b6669f659f0c022d",
-	"ranking_weight": 300,
+	"image_hash": "50b0383eaa31ef59484df1ab7250ejpeg.jpeg",
 	"url": "eleme://web?navColor=&target_name=&url=https%3A%2F%2Frender.koubei.com%2Fp%2Fkbmodmng%2F1WgIGls7d_prod%2Fcp4GRpYNj.html%3FenableWK%3DYES%26activity_ids%3D%255B10656706%255D%26__webview_options__%3DtransparentTitle%253Dauto%2526transparentTitleTextAuto%253DYES%2526transparentTitleAuto%253DYES%2526allowsBounceVertical%253DNO%26chInfo%3Dch_koubei__chsub_ele&title=&navType=0&animation_type=1"
 }, {
-	"banner_type": 1,
 	"id": 20279466,
-	"image_hash": "c0ec37da6b541cda1de69b3f5fb70e29jpeg",
-	"is_ad_flag_visible": 0,
-	"rank_id": "5994fcf7f4aa4ea7b6669f659f0c022d",
-	"ranking_weight": 0,
+	"image_hash": "c37da6b541cda1de69b3f5fb70e29jpeg.jpeg",
 	"url": "eleme://web?navColor=&target_name=&url=https%3A%2F%2Frender.alipay.com%2Fp%2Fs%2Fi%2F%3Fscheme%3Dalipays%253A%252F%252Fplatformapi%252Fstartapp%253FappId%253D68687399%2526appClearTop%253Dfalse%2526startMultApp%253DYES%2526transparentTitle%253Dnone%2526allowsBounceVertical%253DNO%2526chInfo%253Dch_QDWT__chsub_elemzt%26activity_ids%3D%255B10567058%255D&title=&navType=0&animation_type=1"
 }]

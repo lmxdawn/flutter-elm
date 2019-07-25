@@ -113,11 +113,10 @@ class _HomePageState extends State<HomePage> {
             itemCount: _bannerModelList.length,
             autoplay: true,
             itemBuilder: (BuildContext context, int index) {
-              // return CachedNetworkImage(
-              //     imageUrl: _bannerModelList[index].imageHash,
-              //     placeholder: (context, url) => new CircularProgressIndicator(),
-              //     errorWidget: (context, url, error) => new Icon(Icons.error),
-              // );
+//               return Image.network(
+//                   _bannerModelList[index].imageHash,
+//                 fit: BoxFit.fill,
+//               );
               return CachedNetworkImage(
                 imageUrl: _bannerModelList[index].imageHash,
                 imageBuilder: (context, imageProvider) => Container(

@@ -1,10 +1,10 @@
+import 'package:flutter_elm/exception/json_exception.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_elm/api/home_api.dart';
-import 'package:flutter_elm/model/activity_link_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_elm/model/banner_model.dart';
 import 'package:flutter_elm/pages/test_page.dart';
 import 'package:flutter_elm/utils/custom_route_util.dart';
-import 'package:flutter_elm/utils/network_file_util.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,12 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List _imageUrls = [
-    "https://dimg04.c-ctrip.com/images/70091600000108jx141C8_1920_340_17.jpg",
-    "https://dimg04.c-ctrip.com/images/700k16000000yxmw12BC9_1920_340_17.jpg",
-    "https://dimg04.c-ctrip.com/images/700916000000z2hxz54B6_1920_340_17.jpg",
-  ];
-
   List<BannerModel> _bannerModelList;
 
   // APP Bar 透明度
@@ -37,11 +31,13 @@ class _HomePageState extends State<HomePage> {
   _loadData() async {
     // 顶部banner数据
     try {
-      List<BannerModel> bannerList = await banners();
+      List<BannerModel> bannerList = await HomeApi.banners();
       setState(() {
         _bannerModelList = bannerList;
       });
-    } catch (e) {}
+    } on JsonException catch (e) {
+      print(e.code);
+    }
   }
 
   @override
@@ -117,9 +113,24 @@ class _HomePageState extends State<HomePage> {
             itemCount: _bannerModelList.length,
             autoplay: true,
             itemBuilder: (BuildContext context, int index) {
-              return Image.network(
-                _bannerModelList[index].imageHash,
-                fit: BoxFit.fill,
+              // return CachedNetworkImage(
+              //     imageUrl: _bannerModelList[index].imageHash,
+              //     placeholder: (context, url) => new CircularProgressIndicator(),
+              //     errorWidget: (context, url, error) => new Icon(Icons.error),
+              // );
+              return CachedNetworkImage(
+                imageUrl: _bannerModelList[index].imageHash,
+                imageBuilder: (context, imageProvider) => Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: imageProvider,
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(
+                                Colors.red, BlendMode.colorBurn)),
+                      ),
+                    ),
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               );
             },
             pagination: SwiperPagination(),

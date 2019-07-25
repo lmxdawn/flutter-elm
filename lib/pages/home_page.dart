@@ -29,24 +29,19 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     // 初始化数据
-    _loadData().then((data) {
-      var bannerMap = data[0];
-      if (bannerMap['s'] != 1) {
-        print("接口数据返回错误！");
-      } else {
-        var bannerData = bannerMap['d'];
-        List<BannerModel> bannerList = List<BannerModel>();
-        for (var banner in bannerData) {
-          BannerModel bannerModel = BannerModel.fromJson(banner);
-          bannerModel.imageHash = NetworkFileUtil.imageUrl(bannerModel.imageHash);
-          bannerList.add(bannerModel);
-        }
-        setState(() {
-          _bannerModelList = bannerList;
-        });
-      }
-    });
+    _loadData();
     super.initState();
+  }
+
+// 加载初始化数据
+  _loadData() async {
+    // 顶部banner数据
+    try {
+      List<BannerModel> bannerList = await banners();
+      setState(() {
+        _bannerModelList = bannerList;
+      });
+    } catch (e) {}
   }
 
   @override
@@ -87,28 +82,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-// 加载初始化数据
-  Future _loadData() async {
-    List<dynamic> responses = await Future.wait([banners()]);
-    return responses;
-  }
-
+  // 列表数据
   Widget _listView() {
     return ListView(
       children: <Widget>[
         Container(
           height: 160,
-          child: Swiper(
-            itemCount: _bannerModelList.length,
-            autoplay: true,
-            itemBuilder: (BuildContext context, int index) {
-              return Image.network(
-                _bannerModelList[index].imageHash,
-                fit: BoxFit.fill,
-              );
-            },
-            pagination: SwiperPagination(),
-          ),
+          child: _bannerView(),
         ),
         Container(
           height: 800,
@@ -127,6 +107,23 @@ class _HomePageState extends State<HomePage> {
         )
       ],
     );
+  }
+
+  // 顶部banner
+  Widget _bannerView() {
+    return _bannerModelList == null
+        ? null
+        : Swiper(
+            itemCount: _bannerModelList.length,
+            autoplay: true,
+            itemBuilder: (BuildContext context, int index) {
+              return Image.network(
+                _bannerModelList[index].imageHash,
+                fit: BoxFit.fill,
+              );
+            },
+            pagination: SwiperPagination(),
+          );
   }
 
   // 页面滚动

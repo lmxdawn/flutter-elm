@@ -117,6 +117,7 @@ class _HomePageState extends State<HomePage> {
 //                   _bannerModelList[index].imageHash,
 //                 fit: BoxFit.fill,
 //               );
+              // 图片懒加载
               return CachedNetworkImage(
                 imageUrl: _bannerModelList[index].imageHash,
                 imageBuilder: (context, imageProvider) => Container(

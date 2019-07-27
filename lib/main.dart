@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_elm/config/Application.dart';
-import 'package:flutter_elm/navigator/tab_navigator.dart';
+import 'package:flutter_elm/navigator/bottom_navagation_bar.dart';
 
 
 Future main() async {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TabNavigator(),
+      home: BottomNavagationBar(),
     );
   }
 }

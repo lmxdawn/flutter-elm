@@ -5,7 +5,7 @@ class MyPage extends StatefulWidget {
   _MyPageState createState() => _MyPageState();
 }
 
-class _MyPageState extends State<MyPage> {
+class _MyPageState extends State<MyPage> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
@@ -15,4 +15,7 @@ class _MyPageState extends State<MyPage> {
       )
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

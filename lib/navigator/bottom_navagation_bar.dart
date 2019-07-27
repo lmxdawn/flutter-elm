@@ -3,6 +3,7 @@ import 'package:flutter_elm/pages/home_page.dart';
 import 'package:flutter_elm/pages/my_page.dart';
 import 'package:flutter_elm/pages/search_page.dart';
 import 'package:flutter_elm/pages/travel_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavagationBar extends StatefulWidget {
   @override
@@ -24,6 +25,10 @@ class _BottomNavagationBarState extends State<BottomNavagationBar> {
 
   @override
   Widget build(BuildContext context) {
+
+    // 屏幕适配
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+
     return Scaffold(
       body: PageView(
         controller: _controller,

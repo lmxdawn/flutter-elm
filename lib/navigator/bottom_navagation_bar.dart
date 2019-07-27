@@ -13,7 +13,7 @@ class _BottomNavagationBarState extends State<BottomNavagationBar> {
   final _defaultColor = Colors.grey;
   final _activeColor = Colors.blue;
   int _currentIndex = 0;
-  final PageController _controller = PageController(initialPage: 3);
+  final PageController _controller = PageController(initialPage: 0);
 
   final List<Widget> pages = [
     HomePage(),

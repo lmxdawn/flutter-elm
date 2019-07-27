@@ -29,8 +29,6 @@ dependencies:
   flutter_screenutil: ^0.5.3
   # http 请求库
   dio: ^2.1.0
-  # 图片加载
-  cached_network_image: ^1.1.1
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,6 @@
 import 'package:flutter_elm/exception/json_exception.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_elm/api/home_api.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_elm/model/banner_model.dart';
 import 'package:flutter_elm/pages/address_page.dart';
 import 'package:flutter_elm/utils/custom_route_util.dart';
@@ -48,8 +47,9 @@ class _HomePageState extends State<HomePage>
         _loading = false;
       });
     } on JsonException catch (e) {
-      print(e.code);
-      _loading = false;
+      setState(() {
+        _loading = false;
+      });
     }
   }
 
@@ -271,8 +271,7 @@ class _HomePageState extends State<HomePage>
     final double height = ScreenUtil().setWidth(170);
     return _bannerModelList == null
         ? LoadingView(height: height)
-        : Container(
-            decoration: BoxDecoration(),
+        : LoadingView(
             height: height,
             child: PhysicalModel(
               color: Colors.transparent,
@@ -282,24 +281,9 @@ class _HomePageState extends State<HomePage>
                 itemCount: _bannerModelList.length,
                 autoplay: true,
                 itemBuilder: (BuildContext context, int index) {
-//               return Image.network(
-//                   _bannerModelList[index].imageHash,
-//                 fit: BoxFit.fill,
-//               );
-                  // 图片懒加载
-                  return CachedNetworkImage(
-                    imageUrl: _bannerModelList[index].imageHash,
-                    imageBuilder: (context, imageProvider) => Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: imageProvider,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                    placeholder: (context, url) => LoadingView(height: height),
-                    errorWidget: (context, url, error) =>
-                        LoadingView(text: "加载失败", height: height),
+                  return Image.network(
+                    _bannerModelList[index].imageHash,
+                    fit: BoxFit.fill,
                   );
                 },
                 pagination: SwiperPagination(),

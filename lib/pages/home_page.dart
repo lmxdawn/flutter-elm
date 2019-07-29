@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_elm/api/home_api.dart';
 import 'package:flutter_elm/model/banner_model.dart';
 import 'package:flutter_elm/model/entrie_model.dart';
+import 'package:flutter_elm/navigator/custom_cupertino_page.dart';
 import 'package:flutter_elm/pages/address_page.dart';
+import 'package:flutter_elm/pages/test_page.dart';
 import 'package:flutter_elm/utils/custom_route_util.dart';
 import 'package:flutter_elm/widget/loading_container.dart';
 import 'package:flutter_elm/widget/loading_view.dart';
@@ -161,7 +163,12 @@ class _HomePageState extends State<HomePage>
         Container(
           height: 800,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .push(MyCupertinoPageRoute(builder: (context) {
+                return SecondPage();
+              }));
+            },
             child: ListTile(
               title: Text("嘿嘿"),
             ),

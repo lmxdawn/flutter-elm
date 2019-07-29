@@ -116,7 +116,7 @@ class MyCupertinoPageRoute<T> extends CupertinoPageRoute<T> {
 
 // Offset from offscreen to the right to fully on screen.
 final Animatable<Offset> _kTweenNone = Tween<Offset>(
-  begin: Offset.zero,
+  begin: Offset(0.0, 1.0),
   end: Offset.zero,
 );
 
